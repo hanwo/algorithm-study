@@ -15,30 +15,29 @@ public class kakao_recruit_신고결과받기 {
 
     public static int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
-        Map<String, Set<String>> reportTarget = new HashMap<>();
-        Map<String, Integer> reportOwner = new HashMap<>();
+        Map<String, Set<String>> reportTarget = new HashMap<>();    // 신고 당한 사람 (신고 중복 방지(<SET>))
+        Map<String, Integer> reportOwner = new HashMap<>();         // 신고 한 사람
 
         for (String s : id_list) {
-            reportTarget.put(s, new HashSet<>());
-            reportOwner.put(s, 0);
+            reportTarget.put(s, new HashSet<>());               // 신고 당한 사람 세팅
+            reportOwner.put(s, 0);                              // 신고 한 사람 카운트 세팅
         }
         for (String str : report) {
-            String[] strings = str.split(" ");
-            reportTarget.get(strings[1]).add(strings[0]);
+            String[] strings = str.split(" ");            // "무지 프로도" -> 구분
+            reportTarget.get(strings[1]).add(strings[0]);       // 무지(strings[0])가 프로도(strings[1])를 신고 했다.
         }
 
         for (String key : id_list) {
-            Set<String> reportList = reportTarget.get(key);
+            Set<String> reportList = reportTarget.get(key);     // 해당 key(유저 이름) 신고 한 사람 조회
             if (reportList.size() >= k) {
                 for (String ownerKey : reportList) {
-                    reportOwner.put(ownerKey, reportOwner.get(ownerKey) + 1);
+                    reportOwner.put(ownerKey, reportOwner.get(ownerKey) + 1);       // 메일 보내면 카운트 업 [ 메일 발송 조건 = k ]
                 }
             }
         }
         for (int i = 0; i < id_list.length; i++) {
-            answer[i] = reportOwner.get(id_list[i]);
+            answer[i] = reportOwner.get(id_list[i]);                            // 제출할 정답에 넣기
         }
-
         return answer;
     }
 
