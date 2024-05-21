@@ -1,6 +1,7 @@
 package com.wooseok.algorithm.programmers.algorithm.hash.day2;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public interface 완주하지_못한_선수 {
@@ -12,20 +13,27 @@ public interface 완주하지_못한_선수 {
         String[] completion1 = {"eden", "kiki"};
         String[] completion2 = {"josipa", "filipa", "marina", "nikola"};
         String[] completion3 = {"stanko", "ana", "mislav"};
-        String solution = solution(participant3, completion3);
+        String solution = solution(participant2, completion2);
         System.out.println("solution = " + solution);
     }
-
     static String solution(String[] participant, String[] completion) {
-        HashSet<String> part = new HashSet<>(Arrays.asList(participant));
-        HashSet<String> com = new HashSet<>(Arrays.asList(completion));
+        HashMap<String, Integer> map = new HashMap<>();
 
-        HashSet<String> substract = new HashSet<>(part);
-        substract.removeAll(com);
+        for (String part : participant) {
+            map.put(part, map.getOrDefault(part, 0) + 1);
+        }
 
-        System.out.println(substract);
-        String answer = "";
-        return answer;
+        for (String com : completion) {
+            map.put(com, map.get(com) - 1);
+        }
+
+        for (String key : map.keySet()) {
+            if (map.get(key) != 0) {
+                return key;
+            }
+        }
+
+        return null;
     }
 
 }
