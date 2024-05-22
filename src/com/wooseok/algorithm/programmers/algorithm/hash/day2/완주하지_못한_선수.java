@@ -1,8 +1,6 @@
 package com.wooseok.algorithm.programmers.algorithm.hash.day2;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public interface 완주하지_못한_선수 {
 
@@ -35,5 +33,4 @@ public interface 완주하지_못한_선수 {
 
         return null;
     }
-
 }
