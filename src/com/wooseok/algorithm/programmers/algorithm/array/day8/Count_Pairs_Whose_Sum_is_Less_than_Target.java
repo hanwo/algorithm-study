@@ -66,5 +66,4 @@ public class Count_Pairs_Whose_Sum_is_Less_than_Target {
             return count;
         }
     }
-
 }
