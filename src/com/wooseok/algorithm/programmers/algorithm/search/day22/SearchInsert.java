@@ -13,26 +13,35 @@ public class SearchInsert {
         int i1 = searchInsert(nums, target2);
         int i2 = searchInsert(nums, target3);
 
-        System.out.println("i = " + i);
-        System.out.println("i1 = " + i1);
-        System.out.println("i2 = " + i2);
+        System.out.println("i = " + i); // 2
+        System.out.println("i1 = " + i1); // 1
+        System.out.println("i2 = " + i2); // 4
     }
 
     public static int searchInsert(int[] nums, int target) {
-        int answer = 0;
         for (int i = 0; i < nums.length; i++) {
-            if(nums[i] == target) {
+            if (nums[i] >= target) {
                 return i;
             }
+        }
+        return nums.length;
+    }
 
-            if(nums[nums.length-1] < target){
-                return nums.length;
+    public static int searchInsert2(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+        while (start <= end) {
+            int middle = start + (end - start) / 2;
+            if (nums[middle] == target) {
+                return middle;
             }
-
-            if(nums[i] < target && nums[i+1] > target) {
-                return i+1;
+            if (nums[middle] > target) {
+                end = middle - 1;
+            }
+            if (nums[middle] < target) {
+                start = middle + 1;
             }
         }
-        return answer;
+        return start;
     }
 }
