@@ -33,7 +33,6 @@ public class Count_Items_Matching_a_Rule {
 		System.out.println("countMatches(items, ruleKey1, ruleValue1) = " + countMatches(items, ruleKey1, ruleValue1));
 		// 2
 		System.out.println("countMatches(items, ruleKey2, ruleValue2) = " + countMatches(items, ruleKey2, ruleValue2));
-
 		// 7
 		System.out.println("countMatches(items2,ruleKey3,ruleValue3) = " + countMatches(items2, ruleKey3, ruleValue3));
 	}
