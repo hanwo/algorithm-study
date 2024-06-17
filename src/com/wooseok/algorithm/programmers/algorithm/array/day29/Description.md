@@ -1,6 +1,6 @@
 # 문제 설명
 
-배열 `items`가 주어집니다. 각 $`items[i] = [type_i, color_i, name_i]`$는 $i^th$번째 아이템의 타입, 색상, 이름을 나타냅니다.  
+배열 `items`가 주어집니다. 각 $`items[i] = [type_i, color_i, name_i]`$는 $i^{th}$번째 아이템의 타입, 색상, 이름을 나타냅니다.  
 또한 두 개의 문자열 `ruleKey`와 `ruleValue`로 표현된 규칙이 주어집니다.  
 i번째 아이템이 다음 중 하나에 해당하면 규칙에 맞는다고 합니다:
 
@@ -27,6 +27,6 @@ i번째 아이템이 다음 중 하나에 해당하면 규칙에 맞는다고 �
 ## 제약 사항
 
 - $`1 <= items.length <= 10^4`$
-- $`1 <= type_i.length, color_i.length, name_i.length, ruleValue.length <= 10`$
+- $`1 <= type_i.length,  color_i.length, name_i.length,  ruleValue.length <= 10`$
 - `ruleKey`는 `"type"`, `"color"`, `"name"` 중 하나입니다.
 - 모든 문자열은 소문자 영어 문자로만 구성됩니다.
