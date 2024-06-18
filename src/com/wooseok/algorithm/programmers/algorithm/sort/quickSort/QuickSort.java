@@ -97,6 +97,7 @@ public class QuickSort {
 
 	/*
 	 * pivot을 기준으로 파티션을 나누기 위한 정렬 메소드
+	 * 피벗보다 작은 값들은 왼쪽에, 큰 값들은 오른쪽에 치중하도록 하는 것
 	 *
 	 * @param a : 정렬 할 배열
 	 * @param left : 현재 배열의 가장 왼쪽 부분
