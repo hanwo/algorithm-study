@@ -22,6 +22,6 @@ public class quickSort {
 1. 랜덤의 피벗 선택
 2. 원소 3가지의 중간 값을 골라 피벗 설정
    1. 3가지의 중간 값을 가지는 방법
-      1. (a+b+c)/3
-      2. (a+b+c)-(최댓값)-(최솟값)  
+      1. $(a+b+c) / 3$
+      2. $(a+b+c) - (최댓값) - (최솟값)$  
       ex) $`(arr[a] + arr[b] + arr[c]) - (Math.max(arr[a], Math.max(arr[b],arr[c]))) - (Math.min(arr[a], Math.min(arr[b],arr[c])))`$
